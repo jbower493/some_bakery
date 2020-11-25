@@ -558,6 +558,11 @@ footer {
   padding: 20px;
 }
 
+.sidebar-content {
+  position: sticky;
+  top: 20px;
+}
+
 #search {
   padding: 10px;
   width: 100%;
@@ -569,6 +574,10 @@ footer {
   font-size: var(--fs-large);
   font-weight: 500;
   margin: 10px 0;
+}
+
+.active {
+  color: var(--clr-primary);
 }
 
 main {
@@ -583,7 +592,7 @@ main {
 }
 
 .category-title {
-  width: 150px;
+  width: 200px;
   margin-bottom: 40px;
   border-bottom: 1px solid var(--clr-primary);
 }
