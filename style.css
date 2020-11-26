@@ -483,6 +483,10 @@ footer {
   align-items: center;
 }
 
+.icon-attributions {
+  max-width: 400px;
+}
+
 .footer-links a {
   margin: 0 10px;
   color: white;
@@ -623,4 +627,43 @@ main {
 .product p {
   font-size: var(--fs-small);
   color: var(--clr-darkgrey);
+}
+
+/* stores page */
+
+.stores-hero-section {
+  background: url("images/store_front.jpg") no-repeat center;
+  background-size: cover;
+}
+
+.stores-main-section {
+  padding: 80px 20px;
+}
+
+.store {
+  display: flex;
+  width: 1000px;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.store:last-of-type {
+  margin-top: 80px;
+}
+
+.store-image {
+  width: 400px;
+  height: 300px;
+}
+
+.store-number, .store-email, .store-hours {
+  display: flex;
+  align-items: center;
+}
+
+.store-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 20px;
+  filter: invert(23%) sepia(26%) saturate(7262%) hue-rotate(328deg) brightness(86%) contrast(97%);
 }

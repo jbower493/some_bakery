@@ -67,3 +67,41 @@ for(let i = 0; i < sidebarLinks.length; i++) {
 }
 
 window.addEventListener('scroll', scroll);
+
+// product search filter
+
+const products = document.querySelectorAll('.product');
+const searchBar = document.getElementById('search');
+
+// onkeyup event listener
+const filter = (e) => {
+  for(let i = 0; i < products.length; i++) {
+    products[i].style.display = 'block';
+  }
+
+  const categories = document.querySelectorAll('.category');
+  for(let i = 0; i < categories.length; i++) {
+    categories[i].style.display = 'block'
+  }
+
+  for(let i = 0; i < products.length; i++) {
+    if(!products[i].id.includes(e.target.value)) {
+      products[i].style.display = 'none';
+    }
+  }
+
+  for(let i = 0; i < categories.length; i++) {
+    let count = 0;
+    const children = categories[i].lastElementChild.children;
+    for(let j = 0; j < children.length; j++) {
+      if(children[j].style.display !== 'none') {
+        count++;
+      }
+    }
+    if(count === 0) {
+      categories[i].style.display = 'none';
+    }
+  }
+};
+
+searchBar.addEventListener('keyup', filter);
