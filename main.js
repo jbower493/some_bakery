@@ -29,6 +29,7 @@ const pastriesCategory = document.getElementById('pastries-category');
 const seasonalCategory = document.getElementById('seasonal-category');
 
 
+
 // sidebar links onclick event listener
 const snapTo = (e) => {
   //e.preventDefault();
@@ -40,6 +41,13 @@ const snapTo = (e) => {
 
   e.target.classList.add('active');
 };
+
+// add event listener to sidebar menu links only if we are on products page
+if(sidebarLinks.length !== 0) {
+  for(let i = 0; i < sidebarLinks.length; i++) {
+    sidebarLinks[i].addEventListener('click', snapTo);
+  }
+}
 
 // onscorll event listener
 const scroll = (e) => {
@@ -62,11 +70,10 @@ const scroll = (e) => {
   }
 };
 
-for(let i = 0; i < sidebarLinks.length; i++) {
-  sidebarLinks[i].addEventListener('click', snapTo);
+// add event listener to scroll event only if we are on products page
+if(sidebarLinks.length !== 0) {
+  window.addEventListener('scroll', scroll);
 }
-
-window.addEventListener('scroll', scroll);
 
 // product search filter
 
@@ -85,7 +92,7 @@ const filter = (e) => {
   }
 
   for(let i = 0; i < products.length; i++) {
-    if(!products[i].id.includes(e.target.value)) {
+    if(!products[i].id.includes(e.target.value.toLowerCase())) {
       products[i].style.display = 'none';
     }
   }
@@ -104,4 +111,7 @@ const filter = (e) => {
   }
 };
 
-searchBar.addEventListener('keyup', filter);
+// add filter event listener to searchbar only if we are on products page
+if(sidebarLinks.length !== 0) {
+  searchBar.addEventListener('keyup', filter);
+}
