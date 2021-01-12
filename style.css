@@ -266,7 +266,7 @@ header li:last-of-type {
 }
 
 .grid-products {
-  background: url("images/croissant.png") no-repeat center;
+  background: url("images/croissant.jpg") no-repeat center;
   background-size: cover;
   grid-area: a;
 }
